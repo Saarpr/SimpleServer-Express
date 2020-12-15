@@ -7,3 +7,4 @@ module.exports = { cardRouter };
 
 cardRouter.get('/',cardController.getCards); 
 cardRouter.get('/:id',cardController.getCard);
+console.log("Test Saar");
