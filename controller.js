@@ -1,13 +1,14 @@
-const {cards} = require('');
+const {card} = require('./model/cardModel');
 
 exports.cardController = {
     getCards(req,res){
-        console.log('All restaurants data requested!');
-        res.json(cards);
+        card.find({})
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
-    getCards(req,res){
-        card = cards.find(c => c.id === parseInt(req.params.id));
-        console.log(`User with id ${req.params.id} requested!`);
-        res.send(card);
+    getCard(req,res){
+        card.findOne({ id: req.params.id })
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
     }
 };

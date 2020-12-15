@@ -6,4 +6,4 @@ const cardRouter = new Router();
 module.exports = { cardRouter };
 
 cardRouter.get('/',cardController.getCards); 
-cardRouter.get('/:id',cardController.getcard);
+cardRouter.get('/:id',cardController.getCard);
